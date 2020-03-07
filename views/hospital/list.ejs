@@ -1,0 +1,687 @@
+<%include ../partials/header.ejs%>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hospital list</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="/img/logo/c.png">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+
+
+
+<div class="linkbox">
+	
+	<div class="dropdownlist">
+				 
+			 <button class="linkclosebtn" onclick="linkbox();">
+			 <i class="fa fa-times" aria-hidden="true"></i>
+			 </button>
+  
+  
+			  <a href="#" class="dropdownlink" onclick="linkbox();">HOME</a>
+			  <a href="#about" class="dropdownlink " onclick="linkbox();">ABOUT</a>
+			  <a href="#website" class="dropdownlink " onclick="linkbox();">WEBSITES</a>
+			  <a href="#contact" class="dropdownlink" onclick="linkbox();">CONTACT</a>
+			  <a href="#" class="dropdownlink" onclick="linkbox();loginbox()">LOGIN</a>
+	</div>
+  
+  
+	
+  
+  </div><!-- linkbox ends here -->
+  
+  
+
+<!-- login start here -->
+<div class="login">
+   
+	<div class="loginheader">
+		
+		<h1>Sign In</h1>
+ 
+	</div>
+ 
+	<div class="loginbody">
+	   
+ <form method="POST" action="<?php echo htmlspecialchars('login.php'); ?>">
+		   
+		   <input type="text" name="username" placeholder="Username" class="input">
+		   <br>
+		   <input type="password" name="password" placeholder="Password" class="input">
+ 
+		   <br>
+		   <br>
+		   <span style="color: #aaa;">Forgot&nbsp;&nbsp;<a href="#" id="forgotpd">Username / Password? </a></span>
+		   <br>
+ 
+		   <input type="submit" name="submit" value="sign in">
+ 
+	   </form>  
+	
+ 
+	</div>
+ 
+	<div class="loginfooter" >
+		
+		<p>Don't have an account?</p>
+		<br>
+		<a href="#" style="margin-right: 100px;">SIGN UP NOW</a>
+		<a href="#" onclick="loginbox()" >cancel</a>
+	</div>
+   
+ 
+ 
+	<style type="text/css">
+ 
+ 
+	 .login
+	 {
+	   position: fixed;
+	   top:100px;
+	   width: 450px;
+	   left:50%;
+	   transform: translateX(-50%);
+	   height:auto;
+	   font-family: sans-serif;
+	   text-align: center;
+	   border-radius: 10px;
+	   box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.3);
+	   color: white;
+	   background:white;
+	   display: none;
+	   z-index: 2;
+	 }
+   
+ 
+ 
+	 .loginheader
+	 {
+	   min-height: 40px;
+	   background:#1da1f2;
+	   border-radius:10px 10px 0 0;
+	   padding-top:20px;
+	   padding-bottom: 20px;
+	 }
+ 
+	 .loginbody
+	 {
+	   height: 300px;
+ 
+	 }
+   
+	 .loginbody input
+	 {
+	   border-radius: 50px;
+	   border:none;
+	   background: #eee;
+	   padding-left: 30px;
+	   height: 40px;
+	   width:280px; ;
+	   font-size: 16px;
+	   margin-top: 30px;
+ 
+	 }
+ 
+	 .input:focus
+	 {
+	  width: 300px;
+	 } 
+ 
+	 #forgotpd
+	 {
+	   text-decoration: none;
+	   color:  #1da1f2;
+	   margin-right: 20px;
+	 }
+ 
+	 #forgotpd:hover
+	 {
+	   color: tomato;
+	 }
+ 
+	 input[type='submit']
+	{
+	 background: #1da1f2;
+	 color: white;
+	 font-weight: 800;
+	}
+ 
+	input[type='submit']:hover
+	{
+	 background:tomato;
+	}
+ 
+	.loginfooter
+	{
+	 border-radius: 0px 0px 10px 10px;
+	 color: #999;
+	 padding-bottom: 30px;
+	}
+ 
+	.loginfooter a
+	{
+	  text-decoration: none;
+	  color:#1da1f2;
+	  font-weight:800;
+	}
+ 
+	.loginfooter a:hover
+	{
+	 color: tomato;
+	}
+   
+	 
+	  @media screen and (max-width:550px)
+	 {
+	   .login
+	   {
+		 width: 90%;
+	   }
+	 }
+ 
+ 
+	</style>
+ 
+ 
+ </div>
+   <!-- login ends here -->
+ 
+ 
+
+<!-- ------------------------------------------------------- -->
+<style type="text/css">
+	
+	*
+	{
+		box-sizing: border-box;
+		margin:0;
+		padding: 0;
+	}
+   
+	html,body
+	{
+		width: 100%;
+	 height: 100%;
+   
+   
+	}
+   
+	/**********navbar start here*********/
+	.nav
+	{
+	  height: auto;
+	  overflow:hidden;
+	  width: 100%;
+	  border:0px solid red;
+	  position:fixed;
+	  top:0;
+	  z-index: 5;
+   
+	}
+   
+   
+   
+	#logo
+	{
+	  float:left;
+	  font-family: sans-serif;
+	  font-size: 30px;
+	  text-decoration: none;
+	  color:  #1da1f2;
+	  margin: 5px 16px;
+	}
+   
+   
+   #logo img
+   {
+	 max-width: 200px;
+   }
+   
+   
+	.navlink,.menulink
+	{  
+		float:right;
+	   margin-right: 15px;
+	   margin-top:15px;
+	   margin-bottom: 5px;
+		display:block;
+		color:  #1da1f2;
+		text-decoration: none;
+		font-family: sans-serif;
+		padding:10px 16px;
+		border: 1px solid  #1da1f2;
+   
+	}
+   
+	.navlink:hover , .menulink:hover
+	{
+		color:white;
+		background: #1da1f2;
+	}
+   
+	.menulink
+	{
+	 display: none;
+	}
+   
+	@media screen and (max-width:768px)
+	{
+	  
+   
+	  .navlink
+	  {
+		  display: none;
+	  }
+   
+	  .menulink
+	  {
+	   display: block;
+	  }
+   
+	  #logo img
+	  {
+	   margin-left: -30px;
+	   border:0px solid red;
+	  }
+   
+	}
+   
+	/**********navbar end here*********/
+	
+	/**********linkbox start here******/
+	 .linkbox
+	{
+		position: fixed;
+		top:0;
+		left:0;
+		width: 100%;
+		height: 0%;
+		background:black;
+	 overflow: hidden;
+	 transition: 0.7s ease;
+	 z-index: 5;
+   
+	}
+   
+	.dropdownlist
+	{
+		position:relative;
+		max-width: 700px;
+		top:50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+	}	
+   
+	.dropdownlink
+	{ 
+   
+	   margin-right: 5px;
+	   margin-top:5px;
+	   margin-bottom: 5px;
+		display: block;
+		color:  #1da1f2;
+		text-decoration: none;
+		font-family: sans-serif;
+		padding:20px 16px;
+		border: 1px solid #1da1f2;
+		color: #1da1f2;
+	   text-align: center;
+	   margin-left:15px;
+	   margin-right: 15px;
+	   letter-spacing: 2px;
+	   font-size: 18px;
+	}
+   
+	 .dropdownlink:hover
+	{
+	  color: white;
+	  background: #1da1f2;
+	}
+   
+	 .linkclosebtn
+	 {
+	  position: relative;
+	  left:50%;
+	  margin-bottom: 50px;
+	  transform: translateX(-50%);
+	  border: none;
+	  background:none;
+	  color: #1da1f2;
+	  font-size: 50px;
+	 }
+	 
+	 .linkclosebtn:hover
+	 {
+		  cursor: pointer;
+		  color: tomato;
+	 }
+   
+	 @media screen and (max-width: 768px)
+	 {
+	   .dropdownlist
+	  {
+	   top:50px;
+	   left:0;
+	   transform: translate(0,0);
+	  }
+   
+	 }
+	
+   
+   /*********linkbox ends here*********/
+   
+   
+   </style>
+
+<script type="text/javascript">
+	
+	window.addEventListener("scroll",function(){
+	  var target = document.getElementsByClassName('nav');
+	  if(window.pageYOffset > 100){
+	   target[0].style.background = "white"; 
+	  }
+	  else if(window.pageYOffset < 100){
+		target[0].style.background = "white";
+	  }
+	},false);
+	
+	
+	 function linkbox()
+	 {
+		 var x=document.getElementsByClassName('linkbox')[0];
+		
+		if(x.style.height=='100%')
+			x.style.height='0';
+		else
+			x.style.height='100%';
+	  
+	  }
+	
+	  function loginbox()
+	 {
+	  var x=document.getElementsByClassName('login')[0];
+		
+		if(x.style.display=='block')
+		   {x.style.display='none';
+		   
+		   }
+		else
+		  {x.style.display='block';
+		   
+		  }
+	  }
+	
+	</script>
+	
+
+	<!-- LISTING HOSPITALS 
+	<%hospitals.forEach(function(data){ %>
+	<div class="list-group ">
+      	<a href="/hospital/id=<%=data._id%>" class="list-group-item list-group-item-action flex-column align-items-start text-light "  style="background: rgb(41, 101, 212)">
+			<img src="https://icon-library.net/images/hospitals-icon/hospitals-icon-14.jpg" alt="" height="50" width="50">
+			  <div class="d-flex w-100 justify-content-between">
+				<h5 class="mb-1"><%= data.name %></h5>
+				<small><%= data.city %></small>
+			</div>
+			<small><%= data.beds_current%></small>
+			<small><%= data.emergency_current%></small>
+			<small><%= data.rating %></small>
+			<small>Time to Reach</small>
+			</a>
+			<br>
+		  </div>
+	<%});%>
+
+</div> -->
+
+
+
+
+
+
+<!-- ----------------------------------MAIN BOX START HERE------------------------------------------------------------- -->
+<div id="middle_section">
+
+		<%hospitals.forEach(function(data){ %>
+<a href="/hospital/id=<%=data._id%>" style="text-decoration: none;color:dodgerblue;" >
+ <div class="main_box">
+ 	
+   <div class="first">
+      <div class="first_left">
+			 <img src="/image/hospital.jpeg">
+			 
+      </div>
+       
+      <div class="first_middle">
+      	  <h2 class="hospital_name"><%= data.name %></h2>
+      	  <h4 class="hospital_address"><%= data.city %>, <%= data.state%></h4>
+      </div>
+
+      <div class="first_right">
+      	  <br>
+      	  <div class="rating">4</div> <span>rating</span>
+      </div>
+
+   </div>
+
+   <div class="second">
+   	  <h2>
+   	  	<span class="property">Beds <span>:</span><span class="value"><%= data.beds_current %></span> </span>
+   	  	
+		 </h2>
+		 <%var b =""%>
+			<% data.blood.forEach(function(entry) { %>
+			<%	b=b+"	 "+entry; %>
+				<% }); %>
+		 <h2>
+			<span class="property">Blood <span>:</span>	<span class="value"><%= b %></span></span>
+      </h2>
+	  <%if(data.emergency_current > 0){%>
+		<h2>
+			<span class="property">Emergency Available<span>:</span>	<span class="value"><%= data.emergency_current%></span></span>
+      </h2>
+		<%}%>
+    <!-- <h2>
+      	<span class="property">Distance <span>:</span></span>
+      	<span class="value">5Km</span>
+      </h2>
+	
+      <h2>
+      	<span class="property">Government or Private <span>:</span></span>
+      	<span class="value">Private</span>
+      </h2>-->
+
+   </div>
+
+   <div class="third">
+   	   <span class="contact_name">contact <span>:</span></span>
+   	   <span class="contact_number"><%= data.contact%></span>
+   </div>
+
+
+ </div><!-- main_box ends here -->
+
+</a>
+ <%});%>
+</div><!-- middle section -->
+
+
+ <style type="text/css">
+ 	
+    #middle_section
+    {
+        position: absolute;
+ 		left:0;
+ 		top:100px;
+ 		transform: translate(50%);
+ 		border: 0px solid red;
+ 		height: auto;
+
+    }
+
+ 	.main_box
+ 	{
+ 		border: 1px solid grey;
+ 		border-radius: 5px;
+ 		width: 650px;
+ 		font-family: sans-serif;
+ 		box-sizing: border-box;
+ 		margin-bottom: 10px;
+
+ 	}
+
+ 	.first
+ 	{
+        border-bottom:  0px solid grey;
+        border-radius: 5px;
+        width: 100%;
+        position: relative;
+        height: 150px;
+ 	}
+
+ 	.first:after
+ 	{
+ 		clear: both;
+ 		display: table;
+ 		content:'';
+ 	}
+
+    .first_left
+    {
+    	float: left;
+    }
+
+ 	.first img
+ 	{
+ 		
+ 		max-width: 150px;
+ 		max-width: 150px;
+ 		border-radius: 5px;
+ 	}
+
+    .first_middle
+    {   
+    	float: left;
+    	border: 0px solid blue;
+    	width:65%;
+    	height: 100%;
+    	padding-left: 10px;
+    	position: relative;
+
+    }
+
+    .hospital_name
+    {
+    	color: red;
+    	font-size: 40px;
+        margin-top:15%;
+       
+    }
+
+     .hospital_address
+    {
+    	color: grey;
+    	font-size: 17px;
+    	margin-top: 0px;
+    	font-weight: lighter;
+    }
+
+    .first_right
+    {
+    	width: 60px;
+    	float: right;
+    	border: 0px solid blue;
+    	height: 100%;
+    }
+
+    .first_right span
+    {
+    	font-size: 18px;
+    }
+    
+    .rating
+    {
+    	width: 30px;
+    	height: 25px;
+    	text-align: center;
+    	line-height: 25px;
+    	background: green;
+    	color: white;
+    	border: 0px solid red;
+    	border-radius: 3px;
+    }   
+
+
+    .second
+ 	{
+ 		border-bottom:  1px solid grey;
+        border-radius: 0px;
+        padding:10px;
+        position: relative;
+ 	}
+     
+    .second h2
+    {
+    	border: 0px solid green;
+    	margin-top: 0;
+    	margin-bottom:0px;
+    }
+
+    .property
+    {
+       font-size: 18px;
+    }
+
+    .value
+    {   
+    	position: absolute;
+    	font-size: 17px;
+    	color: grey;
+    	font-weight: lighter;
+    	left:40%;
+    }
+    
+ 	.third
+ 	{
+        border: 0px solid green;
+        position: relative;
+        padding-left: 10px;
+        height: 1.8em;
+        line-height: 1.8em;
+  	}
+
+  	.contact_name
+  	{
+  		color: dodgerblue;
+  		font-size: 20px;
+
+  	}
+
+  	.contact_number
+  	{
+  		color: dodgerblue;
+  		font-size: 18px;
+  		position: absolute;
+  		left:40%;
+  	}
+
+ </style>
+
+
+ <!-- javascript code for n times -->
+ <script type="text/javascript">
+
+ </script>
+
+
+</body>
+</html>
+
+
+
+
+

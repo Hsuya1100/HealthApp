@@ -1,0 +1,31 @@
+<%include ../partials/header.ejs%>
+
+<div class="container" >
+	<div class="row">
+		<div class="col-md-3">
+			<h3>Info of hospital</h3>
+			<div class="list-group">
+				<a class="list-group-item active" href="/hospital/id=<%=hospital._id%>/about" >About</a>
+				<!-- <a class="list-group-item active" href="/hospital/id=<%=hospital._id%>/contact" >Contact</a> -->
+				<a class="list-group-item active"  href="/hospital/id=<%=hospital._id%>/departments" >Departments</a>
+			</div>
+		</div>	
+	</div>
+</div>
+<%include ../partials/footer.ejs%>
+
+<div class="col-md-9" >
+		<div class="thumbnail">
+			<img class="img-responsive" src= "<%=hospital.image %> " alt="hospital-image">
+				<h4 ><a href="#">NAME : <%=hospital.name%></a></h4>
+				<h4 ><a href="#">CONTACT : <%=hospital.contact%></a></h4>
+				<h4 ><a href="#">BEDS CURRENT : <%=hospital.beds_current%></a></h4>
+				<h4 ><a href="#">BEDS TOTAL : <%=hospital.beds_total%></a></h4>
+				<h4 ><a href="#">EMERGENCY CURRENT : <%=hospital.emergency_current%></a></h4>
+				<h4 ><a href="#">EMERGENCY TOTAL : <%=hospital.emergency_total%></a></h4>
+				<h4 ><a href="#">VENTLATOR CURRENT : <%=hospital.ventilator_current%></a></h4>
+				<h4 ><a href="#">EMERGENCY TOTAL: <%=hospital.ventilator_total%></a></h4>
+				<h4 ><a href="#">RATING : <%=hospital.rating%></a></h4>
+		</div>
+		<a href="/hospital/id=<%=hospital._id%>/edit">EDIT</a>
+</div>	

@@ -1,0 +1,61 @@
+const express  = require('express')
+const app      = express()
+var bodyParser = require('body-parser');
+var mongoose   = require('mongoose');
+// var flash      = require('connect-flash');
+
+// ========================================================
+
+// DATABASE CONNECTION
+const MongoClient = require('mongodb').MongoClient;
+const uri         = "mongodb+srv://admin:admin@cluster0-jtupl.gcp.mongodb.net/admin?retryWrites=true&w=majority";
+const client      = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+var collection="";
+// client.connect(err => {
+// 	if(err)
+// 		console.log(err);
+// 	else{
+// 		hospitalCollection   = client.db("Hospital").collection("Hospital");
+//         departmentCollection = client.db("Hospital").collection("Department");
+//         doctorCollection     = client.db("Hospital").collection("Doctor");
+
+// 	}
+// });
+
+
+var hospitalCollection="";
+var doctorCollection="";
+var departmentCollection="";
+module.exports = {
+
+    connectToServer: function( callback ) {
+        client.connect(err => {
+            if(err)
+                console.log(err);
+            else{
+                hospitalCollection   = client.db("Hospital").collection("Hospital");
+                doctorCollection     = client.db("Hospital").collection("Doctor");
+                departmentCollection = client.db("Hospital").collection("Department");
+            }
+        });
+    },
+  
+    getDb: function() {
+        _db =[hospitalCollection,doctorCollection,departmentCollection];
+      return _db;
+    }
+  };
+
+// module.exports = {
+
+//     connectToServer: function( callback ) {
+//       MongoClient.connect( url,  { useNewUrlParser: true }, function( err, client ) {
+//         _db  = client.db('test_db');
+//         return callback( err );
+//       } );
+//     },
+  
+//     getDb: function() {
+//       return _db;
+//     }
+//   };

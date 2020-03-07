@@ -1,0 +1,30 @@
+<%include ../partials/header.ejs%>
+		<div class="container mx-auto  " style="text-align: center; margin-top: 12%;background: #d5dde0;padding-left: 0px;padding-right: 0px;margin-left: 1px;margin-right: 0px">
+			<h1>Add a new Hospital</h1>
+		<br>
+		<div style="width:30% ;margin:auto;">
+			<form  action="/hospital/new" method="POST">
+			<div class="form-group">
+				<input class="form-control" placeholder="name" name="name" type="text">
+			</div>
+			<div class="form-group">
+				<input class="form-control" placeholder="image-url" name="url" type="text">
+			</div>
+			<div class="form-group">
+				<input class="form-control" placeholder="city" name="city" type="text">
+			</div>
+			<div class="form-group">
+				<input class="form-control" placeholder="state" name="state" type="text">
+			</div>
+			
+			<div class="form-group">
+				<input class="form-control" placeholder="contact" name="contact" type="text">
+			</div>
+            <button class="btn btn-md btn-primary btn-block">Add</button>
+        </div>
+		</form>
+		</div>
+		<br>
+		<a href="/search"><button class="btn " style="background: #b4b8ab">Home</button></a>
+		</div>
+<%include ../partials/footer.ejs%>

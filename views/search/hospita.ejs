@@ -1,0 +1,30 @@
+<%include ../partials/header.ejs%>
+<div class="container">
+	<div class="jumbotron" style="text-align: center">
+		<h1 class="display-3"></h1>
+		<h3></h3>
+		<br>
+	</div>
+
+</div>
+<div style="width:30% ;margin:auto;">
+			<form  action="/search/hospital" method="POST">
+			<div class="form-group">
+				<input class="form-control" placeholder="Department" name="dept" type="text">
+			</div>
+			<div class="form-group">
+				<label for="bed">BEDS</label>
+				<input class="form-control" placersholder="Y/N" name="bed" type="text">
+			</div>
+			
+			<div class="form-group">
+				<input class="form-control" placeholder="Blood type" name="blood" type="text">
+			</div>
+			<div class="form-group">
+				<input class="form-control" placeholder="city" name="city" type="text">
+			</div>
+			<button class="btn btn-md btn-primary btn-block">Search</button>
+		</form>
+		</div>
+<%include ../partials/footer.ejs%>
+	

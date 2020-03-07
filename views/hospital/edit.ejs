@@ -1,0 +1,88 @@
+<%include ../partials/header.ejs%>
+<%	var route1="/hospital/id="+hospital_id %>
+<%	var route=route1+"?_method=PUT" %>
+<br>
+<div >
+	<div class="row">
+		<h1 >EDIT HOSPITAL </h1>
+			<div class="container col-lg-4">
+				<form  action="<%=route1%>" method="POST">
+				<div class="form-group">
+					<input class="form-control" placeholder="name" name="name" type="text" value=<%=hospital.name%> >
+				</div>
+				<div class="form-group">
+					<input class="form-control" placeholder="image-url" name="url" type="text"  value=<%=hospital.image%> >
+				</div>
+				<div class="form-group">
+					<input class="form-control" placeholder="city" name="city" type="text"  value=<%=hospital.city%> >
+				</div>
+				<div class="form-group">
+					<input class="form-control" placeholder="state" name="state" type="text"  value=<%=hospital.state%> >
+				</div>
+				
+				<div class="form-group">
+					<input class="form-control" placeholder="Total Beds" name="beds_total" type="text"  value=<%=hospital.beds_total%> >
+				</div>
+				<div class="form-group">
+					<input class="form-control" placeholder="Available Beds" name="beds_current" type="text"  value=<%=hospital.beds_current%> >
+				</div>
+				
+				<div class="form-group">
+					<input class="form-control" placeholder="Total Ventilator" name="ventilator_total" type="text"  value=<%=hospital.ventilator_total%> >
+				</div>
+				<div class="form-group">
+						<input class="form-control" placeholder="Available Ventilator" name="ventilator_current" type="text"  value=<%=hospital.ventilator_current%> >
+					</div>
+				<div class="form-group">
+					<input class="form-control" placeholder="Total Emergency" name="emergency_total" type="text"  value=<%=hospital.emergency_total%> >
+				</div>
+				<div class="form-group">
+					<input class="form-control" placeholder="Available Emergency" name="emergency_current" type="text"  value=<%=hospital.emergency_current%> >
+				</div>
+
+				<label for="blood">Blood Available : </label>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="A-" name="blood">
+					<label class="form-check-label" for="inlineCheckbox1">A-</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="A+"  name="blood">
+					<label class="form-check-label" for="inlineCheckbox2">A+</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="B-" name="blood" >
+					<label class="form-check-label" for="inlineCheckbox3">B-</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="B+" name="blood" >
+					<label class="form-check-label" for="inlineCheckbox3">B+</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="AB+" name="blood" >
+					<label class="form-check-label" for="inlineCheckbox3">AB+</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="AB-" name="blood" >
+					<label class="form-check-label" for="inlineCheckbox3">AB-</label>
+				</div>
+				
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="inlineCheckbox3"  value="O+" name="blood" >
+					<label class="form-check-label" for="inlineCheckbox3">O+</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="O+" name="blood" >
+					<label class="form-check-label" for="inlineCheckbox3">O-</label>
+				</div>
+				<button class="btn btn-md btn-primary btn-block">Save</button>
+			</div>
+			</form>
+			
+		</div>
+		<a class="mx-auto" href="/hospital/id=<%= hospital_id %>"><button class="btn " style="background: #b4b8ab">back</button></a>
+	</div>
+		<br>
+		<br>
+		<br>
+</div>
+<%include ../partials/footer.ejs%>

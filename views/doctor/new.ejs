@@ -1,0 +1,38 @@
+<%include ../partials/header.ejs%>
+		<div class="container mx-auto  " style="text-align: center; margin-top: 12%;background: #d5dde0;padding-left: 0px;padding-right: 0px;margin-left: 1px;margin-right: 0px">
+			<h1>Add a new Doctor</h1>
+		<br>
+        <div style="width:30% ;margin:auto;">
+                <!-- /id=:id/departments=:dept/doctors/edit -->
+			<form  action="/hospital/id=<%=id%>/departments=<%=department%>/doctors/edit" method="POST">
+			<div class="form-group">
+				<input class="form-control" placeholder="name" name="name" type="text">
+			</div>
+			<div class="form-group">
+				<input class="form-control" placeholder="image-url" name="url" type="text">
+			</div>
+			<div class="form-group">
+				<input class="form-control" placeholder="department" name="department" type="text" value="<%=department%>">
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="hidden" placeholder="department" name="hospital"  value="<%=data.name%>">
+			</div>
+			<!-- </div> -->
+			<div class="form-group">
+				<input class="form-control" placeholder="city" name="city" type="text">
+			</div>
+			<div class="form-group">
+				<input class="form-control" placeholder="state" name="state" type="text">
+			</div>
+			
+			<div class="form-group">
+				<input class="form-control" placeholder="contact" name="contact" type="text">
+			</div>
+            <button class="btn btn-md btn-primary btn-block">Add</button>
+        </div>
+		</form>
+		</div>
+		<br>
+		<a href="/hospital/id=<%=id%>/department=<%=department%>/doctors"><button class="btn " style="background: #b4b8ab">back</button></a>
+		</div>
+<%include ../partials/footer.ejs%>

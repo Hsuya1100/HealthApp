@@ -1,0 +1,28 @@
+<%include ../partials/header.ejs%>
+<div class="container">
+	<div class="jumbotron" style="text-align: center">
+		<h1 class="display-3">ABOUT</h1>
+		<h3></h3>
+		<br>
+	</div>
+
+</div>
+<%hospitals.forEach(function(data){ %>
+	<div class="list-group ">
+		<a href="/hospital/<%=data._id%>" class="list-group-item list-group-item-action flex-column align-items-start text-light "  style="background: rgb(41, 101, 212)">
+			<img src="https://icon-library.net/images/hospitals-icon/hospitals-icon-14.jpg" alt="" height="50" width="50">
+			  <div class="d-flex w-100 justify-content-between">
+				<h5 class="mb-1"><%= data.name %></h5>
+				<small><%= data.city %></small>
+			</div>
+			<small><%= data.beds_current%></small>
+			<small><%= data.emergency_current%></small>
+			<small><%= data.rating %></small>
+			<small>Time to Reach</small>
+			</a>
+			<br>
+		  </div>
+	<%});%>
+
+<%include ../partials/footer.ejs%>
+	

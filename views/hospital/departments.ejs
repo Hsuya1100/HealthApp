@@ -1,0 +1,208 @@
+<%include ../partials/header.ejs%>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Grenze|Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum&display=swap" rel="stylesheet">
+    <style>
+        .good-review-score{
+    background-color:#66CC33;
+    color:white;
+    text-align: center;
+    padding: 10px;
+    margin-right: 5px
+/*width: 50px;
+    height: 30px; 
+    line-height: 30px*/
+   
+}
+.container{
+        margin-top:50px;
+    }
+    #head{
+        
+        text-align: center;
+    }
+    #dept
+{
+    padding-top: 20px; 
+    
+}
+        </style>
+</head>
+<body>
+        <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <h1 id="head">Departments</h1>      
+                 
+                </div>
+              </div>
+        <div class="container">
+                <div class="row">
+                  <div class="col-sm-4">
+                      <div class="card">
+                        <div class="card-block">
+                          <h1 class="card-text good-review-score float-left">1</h1>
+                          <h4 class="card-title text-center" id="dept"> Eye </h4>
+                          
+                        </div>
+                        <div class="card-footer">
+                          <p class="card-text text-center"> <a href="/hospital/id=<%=hospital._id%>/departments=Opthalmology/doctors"> Opthalmology</a> </p>
+                        </div>
+                      </div>
+                      <div class="card">
+                            <div class="card-block">
+                              <h1 class="card-text good-review-score float-left">2</h1>
+                              <h4 class="card-title text-center" id="dept"> Ear-Nose-Throat </h4>
+                              
+                            </div>
+                            <div class="card-footer">
+                              <p class="card-text text-center"> <a href="/hospital/id=<%=hospital._id%>/departments=ENT/doctors"> ENT</a> </p>
+                            </div>
+                          </div>
+                          <div class="card">
+                                <div class="card-block">
+                                  <h1 class="card-text good-review-score float-left">3</h1>
+                                  <h4 class="card-title text-center" id="dept"> Teeth </h4>
+                                  
+                                </div>
+                                <div class="card-footer">
+                                  <p class="card-text text-center"> <a href="/hospital/id=<%=hospital._id%>/departments=Dentistry/doctors"> Dentistry</a> </p>
+                                </div>
+                              </div>
+                              <div class="card">
+                                    <div class="card-block">
+                                      <h1 class="card-text good-review-score float-left">4</h1>
+                                      <h4 class="card-title text-center" id="dept"> Heart </h4>
+                                      
+                                    </div>
+                                    <div class="card-footer">
+                                      <p class="card-text text-center"> <a href="/hospital/id=<%=hospital._id%>/departments=Cardiology/doctors"> Cardiology</a> </p>
+                                    </div>
+                                  </div>
+                                  <div class="card">
+                                        <div class="card-block">
+                                          <h1 class="card-text good-review-score float-left">5</h1>
+                                          <h4 class="card-title text-center" id="dept"> Lungs </h4>
+                                          
+                                        </div>
+                                        <div class="card-footer">
+                                          <p class="card-text text-center"> <a href="/hospital/id=<%=hospital._id%>/departments=Pulmonology/doctors"> Pulmonology</a> </p>
+                                        </div>
+                                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                        <div class="card">
+                          <div class="card-block">
+                            <h1 class="card-text good-review-score float-left">6</h1>
+                            <h4 class="card-title text-center" id="dept"> Digestive-System </h4>
+                            
+                          </div>
+                          <div class="card-footer">
+                            <p class="card-text text-center"><a href="/hospital/id=<%=hospital._id%>/departments=Gastrology/doctors"> Gastrology</a> </p>
+                          </div>
+                        </div>
+                        <div class="card">
+                              <div class="card-block">
+                                <h1 class="card-text good-review-score float-left">7</h1>
+                                <h4 class="card-title text-center" id="dept"> Female-Specific </h4>
+                                
+                              </div>
+                              <div class="card-footer">
+                                <p class="card-text text-center"> <a href="/hospital/id=<%=hospital._id%>/departments=Gynaecology/doctors">Gynaecology</a> </p>
+                              </div>
+                            </div>
+                            <div class="card">
+                                  <div class="card-block">
+                                    <h1 class="card-text good-review-score float-left">8</h1>
+                                    <h4 class="card-title text-center" id="dept"> Skin </h4>
+                                    
+                                  </div>
+                                  <div class="card-footer">
+                                    <p class="card-text text-center"><a href="/hospital/id=<%=hospital._id%>/departments=Dermatology/doctors"> Dermatology</a> </p>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                      <div class="card-block">
+                                        <h1 class="card-text good-review-score float-left">9</h1>
+                                        <h4 class="card-title text-center" id="dept"> Kidney </h4>
+                                        
+                                      </div>
+                                      <div class="card-footer">
+                                        <p class="card-text text-center"> <a href="/hospital/id=<%=hospital._id%>/departments=Nephrology/doctors"> Nephrology</a> </p>
+                                      </div>
+                                    </div>
+                                    <div class="card">
+                                          <div class="card-block">
+                                            <h1 class="card-text good-review-score float-left">10</h1>
+                                            <h4 class="card-title text-center" id="dept"> STD </h4>
+                                            
+                                          </div>
+                                          <div class="card-footer">
+                                            <p class="card-text text-center"> <a href="/hospital/id=<%=hospital._id%>/departments=Sexology/doctors"> Sexology</a> </p>
+                                          </div>
+                                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                            <div class="card">
+                              <div class="card-block">
+                                <h1 class="card-text good-review-score float-left">11</h1>
+                                <h4 class="card-title text-center" id="dept"> Blood </h4>
+                                
+                              </div>
+                              <div class="card-footer">
+                                <p class="card-text text-center"> <a href="/hospital/id=<%=hospital._id%>/departments=Hematology/doctors">Hematology</a> </p>
+                              </div>
+                            </div>
+                            <div class="card">
+                                  <div class="card-block">
+                                    <h1 class="card-text good-review-score float-left">12</h1>
+                                    <h4 class="card-title text-center" id="dept"> Bones </h4>
+                                    
+                                  </div>
+                                  <div class="card-footer">
+                                    <p class="card-text text-center"> <a href="/hospital/id=<%=hospital._id%>/departments=Orthopaedology/doctors">Orthopaedology</a> </p>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                      <div class="card-block">
+                                        <h1 class="card-text good-review-score float-left">13</h1>
+                                        <h4 class="card-title text-center" id="dept"> Muscles </h4>
+                                        
+                                      </div>
+                                      <div class="card-footer">
+                                        <p class="card-text text-center"><a href="/hospital/id=<%=hospital._id%>/departments=Rheumatology/doctors"> Rheumatology</a> </p>
+                                      </div>
+                                    </div>
+                                    <div class="card">
+                                          <div class="card-block">
+                                            <h1 class="card-text good-review-score float-left">14</h1>
+                                            <h4 class="card-title text-center" id="dept"> Nervous-System </h4>
+                                            
+                                          </div>
+                                          <div class="card-footer">
+                                            <p class="card-text text-center"> <a href="/hospital/id=<%=hospital._id%>/departments=Neurology/doctors"> Neurology</a> </p>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                              <div class="card-block">
+                                                <h1 class="card-text good-review-score float-left">15</h1>
+                                                <h4 class="card-title text-center" id="dept"> Diabetes-&-Metabolism </h4>
+                                                
+                                              </div>
+                                              <div class="card-footer">
+                                                <p class="card-text text-center"> <a href="/hospital/id=<%=hospital._id%>/departments=Endocrinology/doctors"> Endocrinology</a> </p>
+                                              </div>
+                                            </div>
+                        </div>
+              
+                  
+                            </div>
+                                          
+                            </div>
+                
+</body>   

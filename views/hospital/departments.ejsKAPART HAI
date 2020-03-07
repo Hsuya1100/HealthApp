@@ -1,0 +1,18 @@
+ <%Object.keys(hospital.deparment).forEach(function(dept){ %>       
+            <button class="dropdown-item" href="#"><%= dept %></button>
+        // <%});%>
+        </div>
+      </div>
+
+<%hospitals.department['EYE'].forEach(function(doctor){ %>
+	<div class="list-group ">
+			<img src="https://cdn1.vectorstock.com/i/1000x1000/14/80/doctor-web-icon-therapist-avatar-vector-18531480.jpg" alt="" height="50" width="50">
+			  <div class="d-flex w-100 justify-content-between">
+				<h5 class="mb-1"><%= doctor.name %></h5>
+				<small><%= data.degree %></small>
+			</div>
+			<small><%= data.speciality%></small>
+			<small><%= data.contact%></small>
+			<small><%= data.rating %></small>
+		  </div>
+	<%});%>

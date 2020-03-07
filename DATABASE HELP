@@ -1,0 +1,171 @@
+	https://code.tutsplus.com/articles/an-introduction-to-mongoose-for-mongodb-and-nodejs--cms-29527
+	
+	INSERT DOC
+	==================================
+	var doc = {
+		name          : "DOC 4",
+		hospital      : {id :"5d9b59b0aecac7fd7713cab3", name:"JK HOSPITAL"},
+		department    : "EYE",
+		degree        : "MS",
+		experience    : "5",
+		speciality    : "cornea",
+		dayAvailable  : ["WEDNESDAY", "THURSDAY"],
+		timing        : {open  : 1300, close : 1740},
+		building      : "BLOCK 4",
+		floor	      : "1",
+		room	      : 102,
+		contact       : 799889999,
+		rating		  : 4
+	};
+	hospitalname = "JK HOSPITAL";
+	
+	// Doctor.create(doc,function(err,read_data){
+	// 	if(err)
+	// 	console.log("Cannot Find in DB");
+	// 	else
+	// 	console.log(read_data);
+	
+	// });
+	==================================
+INSERT HOSPITAL
+=========================================
+	var data = {
+		name                : "HOSPITSL TEST 1",
+		address             : "BLOCK 2 kanpur Road",
+		city                : "LUCKNOW",
+		state               : "UTTAR PRADESH",
+		contact      	    : 9087654321,
+		image        	    : "url",
+		diagnosis	 	    : ["X RAY", "SONOGRAPHY"],
+		blood       	    : ["AB+","A+"],
+		beds_current        :5,
+		ventilator_current  :5,
+		emergency_current   :5,
+		ambulance_current   :5,
+		beds_total          :5,
+		ventilator_total    :5,
+		emergency_total	    :5,
+		ambulance_total     :5,
+		rating		 	    :5
+	};
+	Hospital.create(data,function(err,read_data){
+		if(err)
+		console.log("Cannot Find in DB");
+		else
+		console.log(read_data);
+	
+	});
+
+
+FIND
+	// // // FIND ALL IN DATABASE
+	// // hospitalCollection.find({},function(err,read_data){
+	// // 		if(err)
+	// // 		console.log("Cannot Find in DB");
+	// // 		else{
+	// // 				// console.log(read_data);
+	// // 				read_data.forEach(function(element) {
+	// // 						console.log(element);
+	// // 					});		
+	// // 				}
+	// // 			});
+				
+=========================================
+
+
+
+
+
+	// INSERT IN DATABASE
+	
+	// collection.insertOne(data,function(err,read_data){
+		// 	if(err)
+		// 	console.log("Cannot Find in DB");
+		// 	else
+		// 	console.log(read_data);
+		
+		// });
+
+	// FIND ALL IN DATABASE
+	// collection.find({},function(err,read_data){
+	// 	if(err)
+	// 	console.log("Cannot Find in DB");
+	// 	else{
+	// 		// console.log(read_data);
+	// 		read_data.forEach(function(element) {
+	// 			console.log(element);
+	// 		});		
+	// 	}
+
+	// });
+
+	// FIND ONE IN DATATABASE
+	// collection.find({},function(err,read_data){
+	// 	if(err)
+	// 	console.log("Cannot Find in DB");
+	// 	else{
+	// 		// console.log(read_data);
+	// 		read_data.forEach(function(element) {
+	// 			console.log(element);
+	// 		});		
+	// 	}
+
+	// });
+
+
+
+	// var data = {
+		//    name     : "lolo",
+	//    image    : "NIKAL",
+	//    beds     : "pehli",
+	//    blood    : "phursat mein",
+	//    location : "NIKAL"
+	// };
+	// FIND ALL IN DATABASE
+	// collection.find({},function(err,read_data){
+		// 	if(err)
+		// 	console.log("Cannot Find in DB");
+		// 	else{
+			// 		// console.log(read_data);
+			// 		read_data.forEach(function(element) {
+				// 			console.log(element);
+				// 		});		
+				// 	}
+				// });
+				
+	// INSERT ONE IN DATABASE
+	// collection.insertOne(data,function(err,read_data){
+	// 	if(err)
+	// 	console.log("Cannot Find in DB");
+	// 	else
+	// 	console.log(read_data);
+	
+	// });
+
+
+
+	// INSERT ONE IN DATABASE
+	// var doc = {
+	// 	name          : "DOC 4",
+	// 	hospital      : {id :"5d9b59b0aecac7fd7713cab3", name:"JK HOSPITAL"},
+	// 	department    : "EYE",
+	// 	degree        : "MS",
+	// 	experience    : "5",
+	// 	speciality    : "cornea",
+	// 	dayAvailable  : ["WEDNESDAY", "THURSDAY"],
+	// 	timing        : {open  : 1300, close : 1740},
+	// 	building      : "BLOCK 4",
+	// 	floor	      : "1",
+	// 	room	      : 102,
+	// 	contact       : 799889999,
+	// 	rating		  : 4
+	// };
+	// hospitalname = "JK HOSPITAL";
+	
+	// // Doctor.create(doc,function(err,read_data){
+	// // 	if(err)
+	// // 	console.log("Cannot Find in DB");
+	// // 	else
+	// // 	console.log(read_data);
+	
+	// // });
